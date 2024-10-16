@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengguna - Sistem Kursus Online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <link rel="stylesheet" href="style.css">  <!-- Tautkan file CSS di sini -->
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Sistem Kursus Online</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">Daftar Sekarang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profil</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="text-center py-5">
+        <h1 class="display-4">Profil Pengguna</h1>
+        <p class="lead">Informasi Anda setelah mendaftar.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="text-center">Detail Pendaftaran</h2>
+        
+        <div id="profileInfo">
+            <p class="text-center">Anda belum mendaftar. Silakan <a href="register.html">daftar sekarang</a>.</p>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-primary">Kembali ke Menu</a>
+            <button id="logoutBtn" class="btn btn-danger">Logout</button>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-light">
+        <p>&copy; 2024 Sistem Kursus Online. Semua hak dilindungi.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Mengecek apakah ada data pengguna yang tersimpan
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+        const userCourse = localStorage.getItem('userCourse');
+
+        // Jika data ada, tampilkan informasi pengguna
+        if (userName && userEmail && userCourse) {
+            document.getElementById('profileInfo').innerHTML = `
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nama:</strong> ${userName}</li>
+                    <li class="list-group-item"><strong>Email:</strong> ${userEmail}</li>
+                    <li class="list-group-item"><strong>Kursus:</strong> ${userCourse}</li>
+                </ul>
+            `;
+        }
+
+        // Fungsi logout
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            // Menghapus data pengguna dari local storage
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userCourse');
+            alert('Anda telah logout.');
+            window.location.href = 'index.html'; // Kembali ke halaman beranda setelah logout
+        });
+    </script>
+</body>
+</html>

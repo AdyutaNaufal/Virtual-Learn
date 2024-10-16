@@ -1,0 +1,103 @@
+body {
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat */
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    color: #0c0c0a; /* Ganti ini dengan kode warna yang diinginkan */
+    font-weight: 700;
+    font-size: 3.5rem;
+    background-image: url('home_banner3.jpg'); /* Gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap untuk teks tetap terlihat */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero a {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* Tutor Cards */
+.tutor-card img {
+    width: 300px;  
+    height: 300px; 
+    transition: transform 0.3s ease;
+}
+
+.card-body {
+    padding: 20px; /* Menambah padding untuk ruang yang lebih baik */
+}
+
+.tutor-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+footer {
+    background-color: #343a40;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.navbar {
+    margin-bottom: 20px; /* Jarak bawah untuk navbar */
+}
+
+.navbar a {
+    color: #343a40; /* Warna teks navbar */
+}
+
+.navbar a:hover {
+    color: #ffc107; /* Warna saat hover */
+}

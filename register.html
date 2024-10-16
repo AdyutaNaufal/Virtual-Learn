@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - Sistem Kursus Online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <link rel="stylesheet" href="style.css">  <!-- Tautkan file CSS di sini -->
+</head>
+<body>
+
+    <header class="text-center py-5">
+        <h1 class="display-4">Daftar Sekarang</h1>
+        <p class="lead">Isi formulir di bawah ini untuk mendaftar.</p>
+    </header>
+
+    <div class="container">
+        <form action="thankyou.html" method="GET"> <!-- Ganti POST menjadi GET -->
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Pilih Kursus</label>
+                <select class="form-control" id="course" name="course" required>
+                    <option value="">Pilih kursus...</option>
+                    <option value="matematika">Matematika</option>
+                    <option value="bahasa-inggris">Bahasa Inggris</option>
+                    <option value="ilmu-komputer">Ilmu Komputer</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+        </form>
+    </div>
+
+    <footer class="text-center py-4 bg-dark text-light">
+        <p>&copy; 2024 Sistem Kursus Online. Semua hak dilindungi.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<script>
+    document.querySelector('form').onsubmit = function() {
+        localStorage.setItem('userName', document.getElementById('name').value);
+        localStorage.setItem('userEmail', document.getElementById('email').value);
+        localStorage.setItem('userCourse', document.getElementById('course').value);
+    };
+    </script>
+    
